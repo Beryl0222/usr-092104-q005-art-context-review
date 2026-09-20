@@ -1,0 +1,9 @@
+{
+  "event_id": "sample-005",
+  "event_type": "CONTEXT_FROZEN",
+  "aggregate_type": "artwork_context",
+  "aggregate_id": "aggregate-005",
+  "occurred_at": "2026-09-20T12:00:00+08:00",
+  "version": 1,
+  "summary": "美术文创语境审校领域样例"
+}

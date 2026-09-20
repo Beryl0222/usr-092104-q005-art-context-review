@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "美术文创语境审校领域事件",
+  "type": "object",
+  "required": [
+    "event_id",
+    "event_type",
+    "aggregate_type",
+    "aggregate_id",
+    "occurred_at",
+    "version",
+    "summary"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "CONTEXT_FROZEN",
+        "DESIGN_SUBMITTED",
+        "RIGHTS_CONFIRMED",
+        "REVIEW_DECIDED",
+        "CHANNEL_SUSPENDED"
+      ]
+    },
+    "aggregate_type": {
+      "type": "string",
+      "enum": [
+        "artwork_context",
+        "design_revision",
+        "rights_grant",
+        "production_batch"
+      ]
+    },
+    "aggregate_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "occurred_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}
