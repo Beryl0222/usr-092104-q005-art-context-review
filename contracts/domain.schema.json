@@ -1,6 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "美术文创语境审校领域事件",
+  "description": "事件信封保持只追加枚举的向后兼容约定：新增事件与聚合只能追加，不得改动既有取值。业务字段统一放在 payload 内，细粒度规则见 src/validator.js。",
   "type": "object",
   "required": [
     "event_id",
@@ -17,23 +18,10 @@
       "minLength": 1
     },
     "event_type": {
-      "type": "string",
-      "enum": [
-        "CONTEXT_FROZEN",
-        "DESIGN_SUBMITTED",
-        "RIGHTS_CONFIRMED",
-        "REVIEW_DECIDED",
-        "CHANNEL_SUSPENDED"
-      ]
+      "$ref": "#/$defs/event_types"
     },
     "aggregate_type": {
-      "type": "string",
-      "enum": [
-        "artwork_context",
-        "design_revision",
-        "rights_grant",
-        "production_batch"
-      ]
+      "$ref": "#/$defs/aggregate_types"
     },
     "aggregate_id": {
       "type": "string",
@@ -45,12 +33,115 @@
     },
     "version": {
       "type": "integer",
-      "minimum": 1
+      "minimum": 1,
+      "description": "同一 aggregate_id 内从 1 起严格递增，形成版本链。"
     },
     "summary": {
       "type": "string",
       "minLength": 1
+    },
+    "payload": {
+      "type": "object",
+      "description": "事件业务字段，各事件类型的必填项见 README 与 validator.js。",
+      "additionalProperties": true
     }
   },
-  "additionalProperties": true
+  "additionalProperties": true,
+  "$defs": {
+    "event_types": {
+      "type": "string",
+      "enum": [
+        "CONTEXT_FROZEN",
+        "EXHIBITION_PUBLISHED",
+        "EXHIBITION_EXTENDED",
+        "RIGHTS_CONFIRMED",
+        "RIGHTS_EXPIRED",
+        "DESIGN_SUBMITTED",
+        "DESIGN_RESUBMITTED",
+        "REVIEW_DECIDED",
+        "OBJECTION_WITHDRAWN",
+        "SAMPLE_VERIFIED",
+        "BATCH_RELEASED",
+        "CHANNEL_SUSPENDED"
+      ]
+    },
+    "aggregate_types": {
+      "type": "string",
+      "enum": [
+        "artwork_context",
+        "exhibition",
+        "rights_grant",
+        "design_revision",
+        "production_batch",
+        "sales_channel"
+      ]
+    },
+    "review_decisions": {
+      "type": "string",
+      "enum": [
+        "APPROVED",
+        "CONDITIONAL",
+        "REJECTED"
+      ]
+    },
+    "opinion_verdicts": {
+      "type": "string",
+      "enum": [
+        "APPROVED",
+        "CONDITIONAL",
+        "REJECTED"
+      ]
+    },
+    "change_facets": {
+      "type": "string",
+      "enum": [
+        "MATERIAL",
+        "COPY",
+        "SIZE",
+        "CHANNEL"
+      ]
+    },
+    "review_kinds": {
+      "type": "string",
+      "enum": [
+        "ARTISTIC",
+        "RIGHTS"
+      ]
+    },
+    "rights_scopes": {
+      "type": "string",
+      "enum": [
+        "REPRODUCTION",
+        "ADAPTATION",
+        "PROMOTION",
+        "LIVESTREAM_SALE"
+      ]
+    },
+    "channel_purposes": {
+      "type": "string",
+      "enum": [
+        "OFFLINE_RETAIL",
+        "ONLINE_RETAIL",
+        "LIVESTREAM_SALE",
+        "WHOLESALE"
+      ]
+    },
+    "opinion_basis_types": {
+      "type": "string",
+      "enum": [
+        "CONTEXT_ELEMENT",
+        "PROHIBITED_CONTEXT",
+        "RIGHTS_SCOPE",
+        "CURATORIAL_NOTE"
+      ]
+    },
+    "visibilities": {
+      "type": "string",
+      "enum": [
+        "INTERNAL",
+        "PERFORMANCE",
+        "PUBLIC"
+      ]
+    }
+  }
 }

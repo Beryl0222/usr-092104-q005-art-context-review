@@ -5,5 +5,19 @@
   "aggregate_id": "aggregate-005",
   "occurred_at": "2026-09-20T12:00:00+08:00",
   "version": 1,
-  "summary": "美术文创语境审校领域样例"
+  "summary": "美术文创语境审校领域样例",
+  "payload": {
+    "exhibition_id": "exh-sample",
+    "artwork_id": "aw-sample",
+    "artwork_published": true,
+    "curatorial_note": "样例策展阐释：说明可提取元素的使用边界。",
+    "extractable_elements": [
+      {
+        "element_id": "el-sample-line",
+        "title": "样例线稿",
+        "guidance": "仅供联调。"
+      }
+    ],
+    "prohibited_contexts": []
+  }
 }

@@ -1,0 +1,525 @@
+[
+  {
+    "event_id": "evt-ctx-aw01-frozen",
+    "event_type": "CONTEXT_FROZEN",
+    "aggregate_type": "artwork_context",
+    "aggregate_id": "ctx-linhe-qiushan",
+    "occurred_at": "2026-09-10T10:00:00+08:00",
+    "version": 1,
+    "summary": "林鹤《秋山行旅》文创语境冻结：限定可提取元素与禁用语境",
+    "payload": {
+      "exhibition_id": "exh-2026-autumn",
+      "artwork_id": "aw-linhe-qiushan",
+      "artwork_title": "秋山行旅",
+      "artist": "林鹤（家属代理：林小鹤）",
+      "artwork_published": true,
+      "curatorial_note": "本作以留白写山势，题跋居于画面一角，文创改编不得抽离留白关系，不得把题跋书迹放大为独立图案。",
+      "extractable_elements": [
+        {
+          "element_id": "el-mountain-line",
+          "title": "山石线稿（含留白比例）",
+          "guidance": "可局部取用，但山形与留白的比例关系须保留。"
+        },
+        {
+          "element_id": "el-colophon",
+          "title": "边角题跋书迹",
+          "guidance": "仅可按原位、原比例缩小使用，不得单独放大或移作主体。"
+        }
+      ],
+      "prohibited_contexts": [
+        {
+          "context_id": "pc-fengshui",
+          "match_copy": "镇宅之宝",
+          "note": "禁止风水化、玄学化阐释"
+        },
+        {
+          "context_id": "pc-meme",
+          "match_copy": "网红同款",
+          "note": "禁止以流量梗消解作品语境"
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt-ctx-aw02-frozen",
+    "event_type": "CONTEXT_FROZEN",
+    "aggregate_type": "artwork_context",
+    "aggregate_id": "ctx-other-work",
+    "occurred_at": "2026-09-10T10:30:00+08:00",
+    "version": 1,
+    "summary": "另一位艺术家作品语境冻结（展览尚未公布该件，合作方不可见）",
+    "payload": {
+      "exhibition_id": "exh-2026-autumn",
+      "artwork_id": "aw-other-002",
+      "artwork_title": "未题名习作",
+      "artist": "另署艺术家",
+      "artwork_published": false,
+      "curatorial_note": "内部资料，未公布。",
+      "extractable_elements": [
+        {
+          "element_id": "el-secret-002",
+          "title": "未公布元素",
+          "guidance": "暂不开放。"
+        }
+      ],
+      "prohibited_contexts": []
+    }
+  },
+  {
+    "event_id": "evt-exh-published",
+    "event_type": "EXHIBITION_PUBLISHED",
+    "aggregate_type": "exhibition",
+    "aggregate_id": "exh-2026-autumn",
+    "occurred_at": "2026-09-15T09:00:00+08:00",
+    "version": 1,
+    "summary": "临展「秋山行旅专题」公布，展期至 2026-12-31",
+    "payload": {
+      "exhibition_id": "exh-2026-autumn",
+      "exhibition_title": "秋山行旅专题",
+      "end_date": "2026-12-31"
+    }
+  },
+  {
+    "event_id": "evt-grant-aw01-v1",
+    "event_type": "RIGHTS_CONFIRMED",
+    "aggregate_type": "rights_grant",
+    "aggregate_id": "grant-aw01-hongbu",
+    "occurred_at": "2026-09-16T14:00:00+08:00",
+    "version": 1,
+    "summary": "鸿帛文创获《秋山行旅》复制、改编、宣传许可，不含直播销售",
+    "payload": {
+      "grant_id": "grant-aw01-hongbu",
+      "exhibition_id": "exh-2026-autumn",
+      "artwork_id": "aw-linhe-qiushan",
+      "rights_holder_id": "heir-linxiaohe",
+      "partner_id": "partner-hongbu",
+      "scopes": ["REPRODUCTION", "ADAPTATION", "PROMOTION"],
+      "channels": ["OFFLINE_RETAIL", "ONLINE_RETAIL"],
+      "effective_from": "2026-09-16",
+      "effective_until": "2026-12-31",
+      "license_fee_internal": "内部商务字段，不对其他合作方可见"
+    }
+  },
+  {
+    "event_id": "evt-grant-aw02-other",
+    "event_type": "RIGHTS_CONFIRMED",
+    "aggregate_type": "rights_grant",
+    "aggregate_id": "grant-aw02-otherco",
+    "occurred_at": "2026-09-16T15:00:00+08:00",
+    "version": 1,
+    "summary": "另一合作方就另一件作品的线下复制许可（鸿帛不可见）",
+    "payload": {
+      "grant_id": "grant-aw02-otherco",
+      "exhibition_id": "exh-2026-autumn",
+      "artwork_id": "aw-other-002",
+      "rights_holder_id": "artist-other",
+      "partner_id": "partner-otherco",
+      "scopes": ["REPRODUCTION"],
+      "channels": ["OFFLINE_RETAIL"],
+      "effective_from": "2026-09-16",
+      "effective_until": "2026-12-31"
+    }
+  },
+  {
+    "event_id": "evt-design-aw02-v1",
+    "event_type": "DESIGN_SUBMITTED",
+    "aggregate_type": "design_revision",
+    "aggregate_id": "design-aw02-badge",
+    "occurred_at": "2026-09-17T11:00:00+08:00",
+    "version": 1,
+    "summary": "另一合作方的徽章提案（鸿帛不可见）",
+    "payload": {
+      "design_id": "design-aw02-badge",
+      "revision_no": 1,
+      "context_id": "ctx-other-work",
+      "artwork_id": "aw-other-002",
+      "exhibition_id": "exh-2026-autumn",
+      "partner_id": "partner-otherco",
+      "material": "珐琅金属",
+      "copy_text": "展览纪念",
+      "size": {"width": 3, "height": 3, "unit": "cm"},
+      "channels": ["OFFLINE_RETAIL"],
+      "elements_used": [
+        {"element_id": "el-secret-002", "region_id": "r-face"}
+      ],
+      "design_regions": [
+        {"region_id": "r-face", "label": "徽章正面"}
+      ]
+    }
+  },
+  {
+    "event_id": "evt-design-aw01-v1",
+    "event_type": "DESIGN_SUBMITTED",
+    "aggregate_type": "design_revision",
+    "aggregate_id": "design-scarf-aw01",
+    "occurred_at": "2026-09-18T10:00:00+08:00",
+    "version": 1,
+    "summary": "鸿帛提交桑蚕丝巾提案 v1：山形线稿满版、题跋放大置中",
+    "payload": {
+      "design_id": "design-scarf-aw01",
+      "revision_no": 1,
+      "context_id": "ctx-linhe-qiushan",
+      "artwork_id": "aw-linhe-qiushan",
+      "exhibition_id": "exh-2026-autumn",
+      "partner_id": "partner-hongbu",
+      "material": "桑蚕丝",
+      "copy_text": "秋山行旅·展览纪念",
+      "size": {"width": 180, "height": 60, "unit": "cm"},
+      "channels": ["OFFLINE_RETAIL", "ONLINE_RETAIL"],
+      "elements_used": [
+        {"element_id": "el-mountain-line", "region_id": "r-main"},
+        {"element_id": "el-colophon", "region_id": "r-colophon"}
+      ],
+      "design_regions": [
+        {"region_id": "r-main", "label": "巾面主画面"},
+        {"region_id": "r-colophon", "label": "题跋位置"},
+        {"region_id": "r-label", "label": "洗标与宣传位"}
+      ]
+    }
+  },
+  {
+    "event_id": "evt-review-aw01-v1-artistic",
+    "event_type": "REVIEW_DECIDED",
+    "aggregate_type": "design_revision",
+    "aggregate_id": "design-scarf-aw01",
+    "occurred_at": "2026-09-20T15:00:00+08:00",
+    "version": 2,
+    "summary": "艺术审校：附条件通过——题跋放大改变原意须撤回，满版裁切须保留白",
+    "payload": {
+      "design_id": "design-scarf-aw01",
+      "revision_no": 1,
+      "review_kind": "ARTISTIC",
+      "decision": "CONDITIONAL",
+      "opinions": [
+        {
+          "opinion_id": "op-curator-001",
+          "party": "CURATOR",
+          "verdict": "CONDITIONAL",
+          "anchor_regions": [
+            {"region_id": "r-main", "note": "满版山形裁掉了留白"}
+          ],
+          "basis": [
+            {"basis_type": "CONTEXT_ELEMENT", "ref": "el-mountain-line"},
+            {"basis_type": "CURATORIAL_NOTE", "ref": "ctx-linhe-qiushan"}
+          ],
+          "conditions": [
+            "山形与留白比例不得低于原稿的二分之一",
+            "不得将山体抽离为重复满版图案"
+          ]
+        },
+        {
+          "opinion_id": "op-heir-001",
+          "party": "ARTIST_OR_HEIR",
+          "verdict": "REJECTED",
+          "anchor_regions": [
+            {"region_id": "r-colophon", "note": "题跋被放大置中，变成了独立图案"}
+          ],
+          "basis": [
+            {"basis_type": "CONTEXT_ELEMENT", "ref": "el-colophon"},
+            {"basis_type": "CURATORIAL_NOTE", "ref": "ctx-linhe-qiushan"}
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt-review-aw01-v1-rights",
+    "event_type": "REVIEW_DECIDED",
+    "aggregate_type": "design_revision",
+    "aggregate_id": "design-scarf-aw01",
+    "occurred_at": "2026-09-20T16:00:00+08:00",
+    "version": 3,
+    "summary": "权利审校：线下与线上零售渠道在授权范围内，通过",
+    "payload": {
+      "design_id": "design-scarf-aw01",
+      "revision_no": 1,
+      "review_kind": "RIGHTS",
+      "decision": "APPROVED",
+      "opinions": [
+        {
+          "opinion_id": "op-biz-001",
+          "party": "BUSINESS_DEPT",
+          "verdict": "APPROVED",
+          "anchor_regions": [
+            {"region_id": "r-label", "note": "渠道与授权一致"}
+          ],
+          "basis": [
+            {"basis_type": "RIGHTS_SCOPE", "ref": "grant-aw01-hongbu"}
+          ]
+        },
+        {
+          "opinion_id": "op-collection-001",
+          "party": "COLLECTION_DEPT",
+          "verdict": "APPROVED",
+          "anchor_regions": [
+            {"region_id": "r-label", "note": "复制方式已登记"}
+          ],
+          "basis": [
+            {"basis_type": "RIGHTS_SCOPE", "ref": "grant-aw01-hongbu"}
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt-design-aw01-v2",
+    "event_type": "DESIGN_RESUBMITTED",
+    "aggregate_type": "design_revision",
+    "aggregate_id": "design-scarf-aw01",
+    "occurred_at": "2026-09-25T10:00:00+08:00",
+    "version": 4,
+    "summary": "鸿帛改稿 v2：换羊绒材质，题跋缩回边角并恢复原比例（仅材质面申报变更）",
+    "payload": {
+      "design_id": "design-scarf-aw01",
+      "revision_no": 2,
+      "based_on_revision": 1,
+      "changed_facets": ["MATERIAL"],
+      "context_id": "ctx-linhe-qiushan",
+      "artwork_id": "aw-linhe-qiushan",
+      "exhibition_id": "exh-2026-autumn",
+      "partner_id": "partner-hongbu",
+      "material": "羊绒",
+      "copy_text": "秋山行旅·展览纪念",
+      "size": {"width": 180, "height": 60, "unit": "cm"},
+      "channels": ["OFFLINE_RETAIL", "ONLINE_RETAIL"],
+      "elements_used": [
+        {"element_id": "el-mountain-line", "region_id": "r-main"},
+        {"element_id": "el-colophon", "region_id": "r-colophon"}
+      ],
+      "design_regions": [
+        {"region_id": "r-main", "label": "巾面主画面（已恢复留白）"},
+        {"region_id": "r-colophon", "label": "边角题跋（原位原比例）"},
+        {"region_id": "r-label", "label": "洗标与宣传位"}
+      ]
+    }
+  },
+  {
+    "event_id": "evt-objection-withdrawn-001",
+    "event_type": "OBJECTION_WITHDRAWN",
+    "aggregate_type": "design_revision",
+    "aggregate_id": "design-scarf-aw01",
+    "occurred_at": "2026-09-26T09:30:00+08:00",
+    "version": 5,
+    "summary": "家属确认 v2 题跋处理后撤回原反对意见；原决定保留不改写",
+    "payload": {
+      "design_id": "design-scarf-aw01",
+      "prior_decision_id": "evt-review-aw01-v1-artistic",
+      "withdrawn_opinion_ids": ["op-heir-001"],
+      "withdrawn_by": "heir-linxiaohe",
+      "note": "改稿后题跋归于边角、比例与原稿一致，反对撤回。"
+    }
+  },
+  {
+    "event_id": "evt-review-aw01-v2-artistic",
+    "event_type": "REVIEW_DECIDED",
+    "aggregate_type": "design_revision",
+    "aggregate_id": "design-scarf-aw01",
+    "occurred_at": "2026-09-27T14:00:00+08:00",
+    "version": 6,
+    "summary": "艺术审校 v2：通过；权利结论沿用 v1（本次未触及权利面）",
+    "payload": {
+      "design_id": "design-scarf-aw01",
+      "revision_no": 2,
+      "review_kind": "ARTISTIC",
+      "decision": "APPROVED",
+      "opinions": [
+        {
+          "opinion_id": "op-curator-002",
+          "party": "CURATOR",
+          "verdict": "APPROVED",
+          "anchor_regions": [
+            {"region_id": "r-main", "note": "留白比例已恢复"}
+          ],
+          "basis": [
+            {"basis_type": "CONTEXT_ELEMENT", "ref": "el-mountain-line"}
+          ]
+        },
+        {
+          "opinion_id": "op-heir-002",
+          "party": "ARTIST_OR_HEIR",
+          "verdict": "APPROVED",
+          "anchor_regions": [
+            {"region_id": "r-colophon", "note": "题跋原位原比例"}
+          ],
+          "basis": [
+            {"basis_type": "CONTEXT_ELEMENT", "ref": "el-colophon"}
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt-exh-extended",
+    "event_type": "EXHIBITION_EXTENDED",
+    "aggregate_type": "exhibition",
+    "aggregate_id": "exh-2026-autumn",
+    "occurred_at": "2026-11-02T09:00:00+08:00",
+    "version": 2,
+    "summary": "展览延期至 2027-02-28；已生产批次不因此被改写",
+    "payload": {
+      "exhibition_id": "exh-2026-autumn",
+      "previous_end_date": "2026-12-31",
+      "new_end_date": "2027-02-28"
+    }
+  },
+  {
+    "event_id": "evt-grant-aw01-v2",
+    "event_type": "RIGHTS_CONFIRMED",
+    "aggregate_type": "rights_grant",
+    "aggregate_id": "grant-aw01-hongbu",
+    "occurred_at": "2026-11-05T14:00:00+08:00",
+    "version": 2,
+    "summary": "补登直播销售许可并随展期延长授权至 2027-03-31",
+    "payload": {
+      "grant_id": "grant-aw01-hongbu",
+      "exhibition_id": "exh-2026-autumn",
+      "artwork_id": "aw-linhe-qiushan",
+      "rights_holder_id": "heir-linxiaohe",
+      "partner_id": "partner-hongbu",
+      "scopes": ["REPRODUCTION", "ADAPTATION", "PROMOTION", "LIVESTREAM_SALE"],
+      "channels": ["OFFLINE_RETAIL", "ONLINE_RETAIL", "LIVESTREAM_SALE"],
+      "effective_from": "2026-09-16",
+      "effective_until": "2027-03-31",
+      "supersedes_event": "evt-grant-aw01-v1"
+    }
+  },
+  {
+    "event_id": "evt-design-aw01-v3",
+    "event_type": "DESIGN_RESUBMITTED",
+    "aggregate_type": "design_revision",
+    "aggregate_id": "design-scarf-aw01",
+    "occurred_at": "2026-11-10T10:00:00+08:00",
+    "version": 7,
+    "summary": "v3：新增直播销售渠道（仅渠道面变更，须权利重审；艺术结论沿用 v2）",
+    "payload": {
+      "design_id": "design-scarf-aw01",
+      "revision_no": 3,
+      "based_on_revision": 2,
+      "changed_facets": ["CHANNEL"],
+      "context_id": "ctx-linhe-qiushan",
+      "artwork_id": "aw-linhe-qiushan",
+      "exhibition_id": "exh-2026-autumn",
+      "partner_id": "partner-hongbu",
+      "material": "羊绒",
+      "copy_text": "秋山行旅·展览纪念",
+      "size": {"width": 180, "height": 60, "unit": "cm"},
+      "channels": ["OFFLINE_RETAIL", "ONLINE_RETAIL", "LIVESTREAM_SALE"],
+      "elements_used": [
+        {"element_id": "el-mountain-line", "region_id": "r-main"},
+        {"element_id": "el-colophon", "region_id": "r-colophon"}
+      ],
+      "design_regions": [
+        {"region_id": "r-main", "label": "巾面主画面"},
+        {"region_id": "r-colophon", "label": "边角题跋"},
+        {"region_id": "r-label", "label": "洗标与宣传位"}
+      ]
+    }
+  },
+  {
+    "event_id": "evt-review-aw01-v3-rights",
+    "event_type": "REVIEW_DECIDED",
+    "aggregate_type": "design_revision",
+    "aggregate_id": "design-scarf-aw01",
+    "occurred_at": "2026-11-12T15:00:00+08:00",
+    "version": 8,
+    "summary": "权利审校 v3：直播许可已补登，通过；以本决定作为投产主许可",
+    "payload": {
+      "design_id": "design-scarf-aw01",
+      "revision_no": 3,
+      "review_kind": "RIGHTS",
+      "decision": "APPROVED",
+      "opinions": [
+        {
+          "opinion_id": "op-biz-003",
+          "party": "BUSINESS_DEPT",
+          "verdict": "APPROVED",
+          "anchor_regions": [
+            {"region_id": "r-label", "note": "直播销售范围与补登授权一致"}
+          ],
+          "basis": [
+            {"basis_type": "RIGHTS_SCOPE", "ref": "grant-aw01-hongbu"}
+          ]
+        },
+        {
+          "opinion_id": "op-collection-003",
+          "party": "COLLECTION_DEPT",
+          "verdict": "APPROVED",
+          "anchor_regions": [
+            {"region_id": "r-label", "note": "直播话术须避开禁用语境，另行随渠道检查"}
+          ],
+          "basis": [
+            {"basis_type": "RIGHTS_SCOPE", "ref": "grant-aw01-hongbu"},
+            {"basis_type": "PROHIBITED_CONTEXT", "ref": "pc-fengshui"}
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt-sample-b001-verified",
+    "event_type": "SAMPLE_VERIFIED",
+    "aggregate_type": "production_batch",
+    "aggregate_id": "batch-2027-001",
+    "occurred_at": "2027-01-08T10:00:00+08:00",
+    "version": 1,
+    "summary": "投产前样品比对：实物哈希与获准 v3 一致",
+    "payload": {
+      "batch_id": "batch-2027-001",
+      "design_id": "design-scarf-aw01",
+      "revision_no": 3,
+      "decision_id": "evt-review-aw01-v3-rights",
+      "sample_hash": "sha256:9f2c1a...（样例占位）",
+      "checked_by": "product-staff-zhou",
+      "matches": true
+    }
+  },
+  {
+    "event_id": "evt-batch-b001-released",
+    "event_type": "BATCH_RELEASED",
+    "aggregate_type": "production_batch",
+    "aggregate_id": "batch-2027-001",
+    "occurred_at": "2027-01-10T09:00:00+08:00",
+    "version": 2,
+    "summary": "批次 B-2027-001 投产 300 件，固化设计 v3、授权快照与三渠道",
+    "payload": {
+      "batch_id": "batch-2027-001",
+      "design_id": "design-scarf-aw01",
+      "revision_no": 3,
+      "decision_id": "evt-review-aw01-v3-rights",
+      "partner_id": "partner-hongbu",
+      "grant_ids": ["grant-aw01-hongbu"],
+      "sample_hash": "sha256:9f2c1a...（样例占位）",
+      "quantity": 300,
+      "channels": ["OFFLINE_RETAIL", "ONLINE_RETAIL", "LIVESTREAM_SALE"],
+      "produced_at": "2027-01-10"
+    }
+  },
+  {
+    "event_id": "evt-channel-livestream-suspended",
+    "event_type": "CHANNEL_SUSPENDED",
+    "aggregate_type": "sales_channel",
+    "aggregate_id": "ch-livestream",
+    "occurred_at": "2027-01-15T20:00:00+08:00",
+    "version": 1,
+    "summary": "直播间将作品宣称为「镇宅之宝」，该批次直播渠道局部停售；线下线上继续",
+    "payload": {
+      "channel_id": "LIVESTREAM_SALE",
+      "batch_ids": ["batch-2027-001"],
+      "reason": "直播话术撞入禁用语境 pc-fengshui，局部停售待整改",
+      "suspended_at": "2027-01-15T20:00:00+08:00"
+    }
+  },
+  {
+    "event_id": "evt-grant-aw01-expired",
+    "event_type": "RIGHTS_EXPIRED",
+    "aggregate_type": "rights_grant",
+    "aggregate_id": "grant-aw01-hongbu",
+    "occurred_at": "2027-03-31T23:59:59+08:00",
+    "version": 3,
+    "summary": "授权到期；已生产批次历史保留，不被回写",
+    "payload": {
+      "grant_id": "grant-aw01-hongbu",
+      "effective_until": "2027-03-31"
+    }
+  }
+]
